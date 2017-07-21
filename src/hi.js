@@ -1,1 +1,0 @@
-export default "Mono maldito!";
