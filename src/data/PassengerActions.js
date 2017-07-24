@@ -6,13 +6,16 @@ import PassengerDispatcher from './PassengerDispatcher';
 const Actions = {
 
   addPassenger(params) {
-    request.post('https://buddy--api.herokuapp.com/passengers').send(params).set('Accept', 'application/json').end(() => {
+    request.post('http://localhost:3001/passengers').send(params).set('Accept', 'application/json').end(() => {
       // params.type
       // debugger;
-      // PassengerDispatcher.dispatch({
-      //   type: PassengerActionTypes.ADD_PASSENGER,
+      PassengerDispatcher.dispatch({
+        type: PassengerActionTypes.ADD_PASSENGER,
+        params,
+      });
 
-    })
+
+    });
 
       // username,
       // first_name,
