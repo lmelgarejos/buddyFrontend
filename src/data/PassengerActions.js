@@ -8,7 +8,7 @@ const Actions = {
   addPassenger(params) {
     request.post('https://buddy--api.herokuapp.com/passengers').send(params).set('Accept', 'application/json').end(() => {
       // params.type
-      debugger;
+      // debugger;
       // PassengerDispatcher.dispatch({
       //   type: PassengerActionTypes.ADD_PASSENGER,
 
