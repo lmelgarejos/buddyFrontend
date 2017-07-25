@@ -1,6 +1,6 @@
 'use strict';
 
-import AppView from '../views/AppView';
+// import AppView from '../views/AppView';
 import {Container} from 'flux/utils';
 import PassengerActions from '../data/PassengerActions';
 import PassengerEditStore from '../data/PassengerEditStore';

@@ -6,7 +6,7 @@ import PassengerDispatcher from './PassengerDispatcher';
 const Actions = {
 
   addPassenger(params) {
-    request.post('http://localhost:3001/passengers').send(params).set('Accept', 'application/json').end(() => {
+    request.post('http://localhost:3000/passengers').send(params).set('Accept', 'application/json').end(() => {
       // params.type
       // debugger;
       PassengerDispatcher.dispatch({
