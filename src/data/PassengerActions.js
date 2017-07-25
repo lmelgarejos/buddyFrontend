@@ -1,7 +1,7 @@
 'use strict';
 
 import PassengerActionTypes from './PassengerActionTypes';
-import PassengerDispatcher from './PassengerDispatcher';
+import AppDispatcher from './AppDispatcher';
 
 const Actions = {
 
@@ -9,7 +9,7 @@ const Actions = {
     request.post('http://localhost:3000/passengers').send(params).set('Accept', 'application/json').end(() => {
       // params.type
       // debugger;
-      PassengerDispatcher.dispatch({
+      AppDispatcher.dispatch({
         type: PassengerActionTypes.ADD_PASSENGER,
         params,
       });
@@ -32,14 +32,14 @@ const Actions = {
   },
 
   deletePassenger(id) {
-    PassengerDispatcher.dispatch({
+    AppDispatcher.dispatch({
       type: PassengerActionTypes.DELETE_PASSENGER,
       id,
     });
   },
 
   editPassenger(id, username, first_name, last_name, home_address, home_zip_code, work_address, work_zip_code, license_number, email, phone_number, user_id) {
-    PassengerDispatcher.dispatch({
+    AppDispatcher.dispatch({
       type: PassengerActionTypes.EDIT_PASSENGER,
       id,
       username,
@@ -57,14 +57,14 @@ const Actions = {
   },
 
   startEditingPassenger(id) {
-    PassengerDispatcher.dispatch({
+    AppDispatcher.dispatch({
       type: PassengerActionTypes.START_EDITING_PASSENGER,
       id,
     });
   },
 
   stopEditingPassenger() {
-    PassengerDispatcher.dispatch({
+    AppDispatcher.dispatch({
       type: PassengerActionTypes.STOP_EDITING_PASSENGER,
     });
   },

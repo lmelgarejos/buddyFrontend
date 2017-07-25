@@ -2,11 +2,11 @@
 
 import {ReduceStore} from 'flux/utils';
 import PassengerActionTypes from './PassengerActionTypes';
-import PassengerDispatcher from './PassengerDispatcher';
+import AppDispatcher from './AppDispatcher';
 
 class PassengerEditStore extends ReduceStore {
   constructor() {
-    super(PassengerDispatcher);
+    super(AppDispatcher);
   }
 
   getInitialState() {

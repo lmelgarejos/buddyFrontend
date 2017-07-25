@@ -5,11 +5,11 @@ import Immutable from 'immutable';
 import {ReduceStore} from 'flux/utils';
 import Passenger from './Passenger';
 import PassengerActionTypes from './PassengerActionTypes';
-import PassengerDispatcher from './PassengerDispatcher';
+import AppDispatcher from './AppDispatcher';
 
 class PassengerStore extends ReduceStore {
   constructor() {
-    super(PassengerDispatcher);
+    super(AppDispatcher);
   }
 
   getInitialState() {
