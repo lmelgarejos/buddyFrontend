@@ -1,0 +1,17 @@
+.Passenger-name,
+.Passenger-info {
+  min-height: 200px;
+}
+
+.Passenger-name p,
+.Passenger-info p {
+  font-size: 18px;
+}
+
+.Passenger-menu {
+  text-align: right;
+}
+
+.Passenger-actions {
+  justify-content: center;
+}
