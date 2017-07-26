@@ -5,6 +5,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
+import QueryString from 'query-string';
+import SessionActions from './data/SessionActions';
+import DriverActions from './data/DriverActions';
+
+
+window.DriverActions = DriverActions;
+
+const query = QueryString.parse(window.location.search);
+
+if (query.token) {
+  SessionActions.setLoggedIn();
+  window.buddy = window.buddy || {};
+  window.buddy.token = query.token;
+}
+
 
 ReactDOM.render(
   // <ThemeProvider theme={theme}>

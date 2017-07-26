@@ -2,8 +2,10 @@
 
 import React from 'react';
 import classnames from 'classnames';
+import LoggedOut from '../App.js';
 
 function AppView(props) {
+  if (!props.loggedIn) return <LoggedOut />
   return (
     <div>
       <Header {...props} />

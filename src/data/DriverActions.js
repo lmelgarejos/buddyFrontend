@@ -2,13 +2,20 @@
 
 import DriverActionTypes from './DriverActionTypes';
 import AppDispatcher from './AppDispatcher';
+import request from 'superagent';
 
 const Actions = {
   addDriver(params) {
-    AppDispatcher.dispatch({
-      type: DriverActionTypes.ADD_DRIVER,
-      params,
-    });
+    params.token = window.buddy.token;
+    request.post('/drivers').send(params).set('Accept', 'application/json')
+      .end((res, err) => {
+        if (err) return;
+        debugger;
+        AppDispatcher.dispatch({
+          type: DriverActionTypes.ADD_DRIVER,
+          params,
+        });
+      });
   },
 
   deleteDriver(id) {
