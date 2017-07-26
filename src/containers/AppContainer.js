@@ -1,32 +1,35 @@
 'use strict';
 
-// import AppView from '../views/AppView';
+import AppView from '../views/AppView';
 import {Container} from 'flux/utils';
-import PassengerActions from '../data/PassengerActions';
-import PassengerEditStore from '../data/PassengerEditStore';
-import PassengerStore from '../data/PassengerStore';
-import App from '../App';
-
-
+import DriverActions from '../data/DriverActions';
+import DriverDraftStore from '../data/DriverDraftStore';
+import DriverEditStore from '../data/DriverEditStore';
+import DriverStore from '../data/DriverStore';
 
 function getStores() {
   return [
-    PassengerEditStore,
-    PassengerStore,
+    DriverEditStore,
+    DriverDraftStore,
+    DriverStore,
   ];
 }
 
 function getState() {
   return {
-    editing: PassengerEditStore.getState(),
-    passengers: PassengerStore.getState(),
+    draft: DriverDraftStore.getState(),
+    editing: DriverEditStore.getState(),
+    todos: DriverStore.getState(),
 
-    onAdd: PassengerActions.addPassenger,
-    onDeletePassenger: PassengerActions.deletePassenger,
-    onEditPassenger: PassengerActions.editPassenger,
-    onStartEditingPassenger: PassengerActions.startEditingPassenger,
-    onStopEditingPassenger: PassengerActions.stopEditingPassenger,
+    onAdd: DriverActions.addDriver,
+    onDeleteDriver: DriverActions.deleteDriver,
+    onEditDriver: DriverActions.editDriver,
+    onStartEditingDriver: DriverActions.startEditingDriver,
+    onStopEditingDriver: DriverActions.stopEditingDriver,
+    onToggleAllDrivers: DriverActions.toggleAllDrivers,
+    onToggleDriver: DriverActions.toggleDriver,
+    onUpdateDraft: DriverActions.updateDraft,
   };
 }
 
-export default Container.createFunctional(App, getStores, getState);
+export default Container.createFunctional(AppView, getStores, getState);
