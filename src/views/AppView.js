@@ -3,6 +3,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import LoggedOut from '../App.js';
+import DriverActions from '../data/DriverActions';
 
 function AppView(props) {
   if (!props.loggedIn) return <LoggedOut />
@@ -18,18 +19,21 @@ function AppView(props) {
 function Header(props) {
   return (
     <header id="header">
-    <h1>Fill the from to become a driver</h1>
-    <NewDriver {...props} />
     </header>
   );
 }
 
 function Main(props) {
-  // if (props.drivers.size === 0) {
+  if (props.drivers.size > 0) {
+    // debugger;
     return null;
-  // }
-  // return props.drivers
-
+  }
+  return (
+    <div>
+      <h1>Fill the from to become a driver</h1>
+      <NewDriver {...props} />
+    </div>
+  )
 }
 
 function Footer(props) {
@@ -44,6 +48,7 @@ class NewDriver extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      
       value: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -65,11 +70,13 @@ class NewDriver extends React.Component {
     console.log(Object.keys(this.props));
     alert('A new driver is being added!');
     console.log(this.state);
-    this.props.onAdd(this.state)
+    // this.props.onAdd(this.state)
+    DriverActions.addDriver(this.state);
+    return this.state
   }
 
-
   render() {
+    if (!this.handleSubmit) return this.state
     return (
       <form onSubmit={this.handleSubmit} id='new-driver'>
       <label>

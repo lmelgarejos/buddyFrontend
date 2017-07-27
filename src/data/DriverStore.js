@@ -20,14 +20,13 @@ class DriverStore extends ReduceStore {
     switch (action.type) {
       case DriverActionTypes.ADD_DRIVER:
       console.log(action);
+      // debugger;
         if (!action.driverInfo) {
           return state;
         }
         const id = Counter.increment();
-        return state.set(id, new Driver({
-          id,
-          params: action.driverInfo,
-        }));
+        // action.driverInfo.id = id
+        return state.set(action.driverInfo.id, new Driver(action.driverInfo));
 
 
       case DriverActionTypes.DELETE_DRIVER:

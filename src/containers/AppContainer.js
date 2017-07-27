@@ -28,10 +28,7 @@ function getState() {
     onDeleteDriver: DriverActions.deleteDriver,
     onEditDriver: DriverActions.editDriver,
     onStartEditingDriver: DriverActions.startEditingDriver,
-    onStopEditingDriver: DriverActions.stopEditingDriver,
-    onToggleAllDrivers: DriverActions.toggleAllDrivers,
-    onToggleDriver: DriverActions.toggleDriver,
-    onUpdateDraft: DriverActions.updateDraft,
+    onStopEditingDriver: DriverActions.stopEditingDriver, 
   };
 }
 
