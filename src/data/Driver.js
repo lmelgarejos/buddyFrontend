@@ -14,7 +14,6 @@ const Driver = Immutable.Record({
   license_number: '',
   email: '',
   phone_number: '',
-  user_id: '',
 });
 
 export default Driver;

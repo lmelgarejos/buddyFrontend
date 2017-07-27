@@ -22,6 +22,7 @@ if (query.token) {
 
 
 ReactDOM.render(
+  // <div></div>,
   // <ThemeProvider theme={theme}>
   <App />,
   // </ThemeProvider>,

@@ -1,6 +1,9 @@
 import {ReduceStore} from 'flux/utils';
 import AppDispatcher from './AppDispatcher';
 import SessionActionTypes from './SessionActionTypes';
+import Immutable from 'immutable';
+import DriverActionTypes from './DriverActionTypes';
+
 
 class SessionStore extends ReduceStore {
   constructor() {
@@ -16,7 +19,7 @@ class SessionStore extends ReduceStore {
   reduce(state, action) {
     switch (action.type) {
       case SessionActionTypes.SET_LOGGED_IN:
-        return state.set(loggedIn, true);
+        return state.set('loggedIn', true);
         break;
       default:
         return state;
